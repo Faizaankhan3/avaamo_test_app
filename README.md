@@ -16,3 +16,8 @@ Import script assumes that
 - Product code is unique and duplicate entries will be skipped
 - Any order detail for a non existing user or product is just reported, may be with some reporting tool, right now I would report it using console prints only
 
+
+* Run the Application
+
+`./bin/dev`
+`rails jobs:work`

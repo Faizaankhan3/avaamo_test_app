@@ -61,3 +61,5 @@ group :development do
 end
 
 gem "rack-cors", "~> 2.0"
+gem 'delayed_job_active_record'
+gem 'daemons'

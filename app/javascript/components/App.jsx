@@ -1,9 +1,10 @@
 import * as React from "react";
+import UsersList from "./UsersList"
 
 const App = () => {
   return (
     <div>
-      <h1>Test React App</h1>
+      <UsersList/>
     </div>
   );
 };
