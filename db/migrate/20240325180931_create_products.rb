@@ -3,7 +3,7 @@ class CreateProducts < ActiveRecord::Migration[7.1]
     create_table :products do |t|
       t.string :code, null: false
       t.string :name
-      t.string :category, null: false
+      t.string :category
 
       t.timestamps
     end

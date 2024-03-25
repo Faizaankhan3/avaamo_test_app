@@ -10,35 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 20_240_325_180_939) do
-  create_table 'orders', force: :cascade do |t|
-    t.integer 'user_id', null: false
-    t.integer 'product_id', null: false
-    t.date 'order_date', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['product_id'], name: 'index_orders_on_product_id'
-    t.index ['user_id'], name: 'index_orders_on_user_id'
+ActiveRecord::Schema[7.1].define(version: 2024_03_25_180939) do
+  create_table "orders", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "product_id", null: false
+    t.date "order_date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_orders_on_product_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table 'products', force: :cascade do |t|
-    t.string 'code', null: false
-    t.string 'name'
-    t.string 'category', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['code'], name: 'index_products_on_code', unique: true
+  create_table "products", force: :cascade do |t|
+    t.string "code", null: false
+    t.string "name"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_products_on_code", unique: true
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'username', null: false
-    t.string 'email', null: false
-    t.string 'phone'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['email'], name: 'index_users_on_email', unique: true
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "email", null: false
+    t.string "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key 'orders', 'products'
-  add_foreign_key 'orders', 'users'
+  add_foreign_key "orders", "products"
+  add_foreign_key "orders", "users"
 end
